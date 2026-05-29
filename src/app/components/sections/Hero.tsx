@@ -93,7 +93,7 @@ export const Hero: React.FC = () => {
       </div>
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
-        <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(340px,420px)] xl:grid-cols-[minmax(0,1fr)_430px] gap-8 lg:gap-10 xl:gap-16 items-center min-h-[calc(100vh-72px)] py-10 sm:py-12 lg:py-14">
+        <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(340px,420px)] xl:grid-cols-[minmax(0,1fr)_430px] gap-8 lg:gap-10 xl:gap-16 items-center min-h-[calc(100vh-72px)] py-10 sm:py-12 lg:py-8 2xl:py-14">
           <div className="text-white max-w-2xl">
             <div className="inline-flex items-center gap-3 mb-4">
               <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded text-[10px] sm:text-xs font-semibold tracking-widest border border-white/20">
