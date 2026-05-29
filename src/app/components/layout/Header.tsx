@@ -9,6 +9,8 @@ export const Header: React.FC = () => {
   const headerBarRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+  const activeLockRef = useRef<string | null>(null);
+  const activeLockTimerRef = useRef<number | null>(null);
 
   const menuItems = [
     { label: 'Início', id: 'hero' },
@@ -21,6 +23,11 @@ export const Header: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      if (activeLockRef.current) {
+        setActiveSection(activeLockRef.current);
+        return;
+      }
 
       const headerHeight = headerBarRef.current?.getBoundingClientRect().height || 0;
       const documentHeight = document.documentElement.scrollHeight;
@@ -88,7 +95,15 @@ export const Header: React.FC = () => {
       const element = getScrollTarget(id);
       if (!element) return;
 
+      activeLockRef.current = id;
+      if (activeLockTimerRef.current) {
+        window.clearTimeout(activeLockTimerRef.current);
+      }
+      activeLockTimerRef.current = window.setTimeout(() => {
+        activeLockRef.current = null;
+      }, 900);
       setActiveSection(id);
+
       if (options.block === 'center') {
         element.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } else {
