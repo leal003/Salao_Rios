@@ -30,6 +30,8 @@ export const Services: React.FC = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+
       gsap.from(titleRef.current, {
         scrollTrigger: {
           trigger: titleRef.current,
@@ -46,7 +48,8 @@ export const Services: React.FC = () => {
           start: 'top 80%',
         },
         opacity: 0,
-        x: -30,
+        x: isDesktop ? -30 : 0,
+        y: isDesktop ? 0 : 18,
         stagger: 0.08,
         duration: 0.6,
       });

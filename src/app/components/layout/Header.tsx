@@ -76,14 +76,20 @@ export const Header: React.FC = () => {
     const element = document.getElementById(id);
     if (element) {
       setActiveSection(id);
-      element.scrollIntoView({ behavior: 'smooth', block: options.block || 'start' });
+      if (options.block === 'center') {
+        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        const headerHeight = document.querySelector('header')?.getBoundingClientRect().height || 0;
+        const top = element.getBoundingClientRect().top + window.scrollY - headerHeight - 12;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
       setIsMobileMenuOpen(false);
     }
   };
 
   return (
     <header
-      className={`relative z-50 w-full transition-all duration-300 ${
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         isScrolled
           ? 'bg-[#5A0005]/98 backdrop-blur-sm shadow-xl'
           : 'bg-[#5A0005]'
@@ -158,13 +164,13 @@ export const Header: React.FC = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-[#8B0008] border-t border-white/10 shadow-2xl">
-          <nav className="max-w-[1400px] mx-auto px-4 sm:px-6 py-[clamp(1rem,3vh,1.25rem)] flex flex-col gap-2">
+        <div className="lg:hidden max-h-[calc(100dvh-clamp(64px,9vh,72px))] overflow-y-auto bg-[#8B0008] border-t border-white/10 shadow-2xl">
+          <nav className="max-w-[1400px] mx-auto px-4 sm:px-6 py-[clamp(0.85rem,2.5vh,1.1rem)] flex flex-col gap-2">
             {menuItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative text-white text-left px-3 py-3 rounded-lg transition-colors ${
+                className={`relative text-white text-center px-3 py-3 rounded-lg transition-colors ${
                   activeSection === item.id ? 'bg-white/12' : 'hover:bg-white/8'
                 }`}
                 style={{ fontFamily: 'Inter, sans-serif' }}

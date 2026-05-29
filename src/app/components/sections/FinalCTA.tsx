@@ -48,7 +48,7 @@ export const FinalCTA: React.FC = () => {
               <button
                 onClick={() => {
                   const element = document.getElementById('appointment');
-                  if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  if (element) element.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }}
                 className="flex items-center gap-2 px-6 py-3 bg-white text-[#8B0008] rounded-lg font-semibold hover:bg-white/90 transition-all shadow-md"
                 style={{ fontFamily: 'Inter, sans-serif' }}
