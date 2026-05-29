@@ -86,7 +86,7 @@ export const Header: React.FC = () => {
       } else {
         const headerHeight = headerBarRef.current?.getBoundingClientRect().height || 0;
         const mobileStoryOffset = window.matchMedia('(max-width: 1023px)').matches && id === 'story';
-        const top = element.getBoundingClientRect().top + window.scrollY - headerHeight - (mobileStoryOffset ? 14 : 56);
+        const top = element.getBoundingClientRect().top + window.scrollY - headerHeight - (mobileStoryOffset ? 2 : 56);
         window.scrollTo({ top, behavior: 'smooth' });
       }
     };
