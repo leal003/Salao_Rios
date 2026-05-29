@@ -58,7 +58,7 @@ export const Services: React.FC = () => {
   return (
     <section id="services" ref={sectionRef} className="py-[clamp(2.5rem,8vh,4rem)] bg-white">
       <div className="max-w-[1400px] mx-auto px-[clamp(1rem,4vw,3rem)]">
-        <div ref={titleRef} className="mb-[clamp(1.5rem,4vh,2rem)]">
+        <div ref={titleRef} className="mb-[clamp(1.5rem,4vh,2rem)] text-center">
           <h2 className="text-[clamp(2rem,4vw,2.5rem)] font-bold text-[#211A1A]" style={{ fontFamily: 'Playfair Display, serif' }}>
             Nossos serviços
           </h2>
