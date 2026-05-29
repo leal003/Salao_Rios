@@ -56,10 +56,10 @@ export const Services: React.FC = () => {
   }, []);
 
   return (
-    <section id="services" ref={sectionRef} className="py-16 bg-white">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div ref={titleRef} className="mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#211A1A]" style={{ fontFamily: 'Playfair Display, serif' }}>
+    <section id="services" ref={sectionRef} className="py-[clamp(2.5rem,8vh,4rem)] bg-white">
+      <div className="max-w-[1400px] mx-auto px-[clamp(1rem,4vw,3rem)]">
+        <div ref={titleRef} className="mb-[clamp(1.5rem,4vh,2rem)]">
+          <h2 className="text-[clamp(2rem,4vw,2.5rem)] font-bold text-[#211A1A]" style={{ fontFamily: 'Playfair Display, serif' }}>
             Nossos serviços
           </h2>
           <p className="text-base text-[#6B5F5F] mt-2" style={{ fontFamily: 'Inter, sans-serif' }}>
@@ -67,13 +67,13 @@ export const Services: React.FC = () => {
           </p>
         </div>
 
-        <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[clamp(1rem,2.5vw,1.25rem)] max-w-5xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <div
                 key={index}
-                className="relative h-[210px] rounded-2xl overflow-hidden group cursor-pointer"
+                className="relative h-[clamp(10.5rem,28vh,13.25rem)] rounded-2xl overflow-hidden group cursor-pointer"
               >
                 <ImageWithFallback
                   src={service.image}

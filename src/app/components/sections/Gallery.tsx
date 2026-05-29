@@ -55,10 +55,10 @@ export const Gallery: React.FC = () => {
   }, []);
 
   return (
-    <section id="gallery" ref={sectionRef} className="py-16 bg-white">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div ref={titleRef} className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#211A1A] mb-3" style={{ fontFamily: 'Playfair Display, serif' }}>
+    <section id="gallery" ref={sectionRef} className="py-[clamp(2.5rem,8vh,4rem)] bg-white">
+      <div className="max-w-[1400px] mx-auto px-[clamp(1rem,4vw,3rem)]">
+        <div ref={titleRef} className="text-center mb-[clamp(1.75rem,5vh,2.5rem)]">
+          <h2 className="text-[clamp(2rem,4vw,2.5rem)] font-bold text-[#211A1A] mb-3" style={{ fontFamily: 'Playfair Display, serif' }}>
             Nosso espaço
           </h2>
           <p className="text-base text-[#6B5F5F]" style={{ fontFamily: 'Inter, sans-serif' }}>

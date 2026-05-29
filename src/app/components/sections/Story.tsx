@@ -76,16 +76,16 @@ export const Story: React.FC = () => {
   ];
 
   return (
-    <section id="story" ref={sectionRef} className="py-16 bg-white">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+    <section id="story" ref={sectionRef} className="py-[clamp(2.5rem,8vh,4rem)] bg-white">
+      <div className="max-w-[1400px] mx-auto px-[clamp(1rem,4vw,3rem)]">
+        <div className="grid lg:grid-cols-2 gap-[clamp(2rem,5vw,3rem)] items-center mb-[clamp(2rem,6vh,3rem)]">
           {/* Image */}
           <div ref={imageRef} className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <ImageWithFallback
                 src={storyImage}
                 alt="Equipe Salão Rios"
-                className="w-full h-[420px] object-cover"
+                className="w-full h-[clamp(18rem,52vh,26.25rem)] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
@@ -93,7 +93,7 @@ export const Story: React.FC = () => {
 
           {/* Content */}
           <div ref={contentRef} className="lg:pl-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#211A1A] mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
+            <h2 className="text-[clamp(2rem,4vw,2.5rem)] font-bold text-[#211A1A] mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
               Nossa história
             </h2>
 
@@ -116,7 +116,7 @@ export const Story: React.FC = () => {
         </div>
 
         {/* Metrics */}
-        <div ref={metricsRef} className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div ref={metricsRef} className="grid grid-cols-2 md:grid-cols-4 gap-[clamp(1rem,3vw,1.5rem)]">
           {metrics.map((metric, index) => {
             const Icon = metric.icon;
             return (

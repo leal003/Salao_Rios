@@ -90,9 +90,9 @@ export const Header: React.FC = () => {
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        <div className="flex items-center justify-between h-[72px] gap-4">
+        <div className="flex items-center justify-between h-[clamp(64px,9vh,72px)] gap-4">
           <div className="flex items-center gap-4 shrink-0">
-            <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center border-2 border-white shadow-md">
+            <div className="w-[clamp(40px,6vh,48px)] h-[clamp(40px,6vh,48px)] rounded-full bg-white flex items-center justify-center border-2 border-white shadow-md">
               <div className="text-[#8B0008] text-xs font-bold text-center leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
                 <div>SALÃO</div>
                 <div>RIOS</div>
@@ -159,7 +159,7 @@ export const Header: React.FC = () => {
 
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-[#8B0008] border-t border-white/10 shadow-2xl">
-          <nav className="max-w-[1400px] mx-auto px-4 sm:px-6 py-5 flex flex-col gap-2">
+          <nav className="max-w-[1400px] mx-auto px-4 sm:px-6 py-[clamp(1rem,3vh,1.25rem)] flex flex-col gap-2">
             {menuItems.map((item) => (
               <button
                 key={item.id}

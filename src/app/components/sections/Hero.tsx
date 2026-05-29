@@ -67,7 +67,7 @@ export const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="hero" ref={heroRef} className="relative min-h-screen pt-[72px] overflow-hidden bg-[#220003]">
+    <section id="hero" ref={heroRef} className="relative min-h-screen pt-[clamp(64px,9vh,72px)] overflow-hidden bg-[#220003]">
       <div className="absolute inset-0">
         <div ref={imageRef} className="absolute inset-y-0 right-0 grid w-full grid-cols-1 overflow-hidden md:w-[68%] md:grid-cols-2 xl:w-[66%]">
           <div className="relative h-full min-w-0">
@@ -93,9 +93,9 @@ export const Hero: React.FC = () => {
       </div>
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
-        <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(340px,420px)] xl:grid-cols-[minmax(0,1fr)_430px] gap-8 lg:gap-10 xl:gap-16 items-center min-h-[calc(100vh-72px)] py-10 sm:py-12 lg:py-8 2xl:py-14">
+        <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(330px,420px)] xl:grid-cols-[minmax(0,1fr)_430px] gap-[clamp(1.5rem,4vw,4rem)] items-center min-h-[calc(100vh-clamp(64px,9vh,72px))] py-[clamp(1.25rem,5vh,3.5rem)]">
           <div className="text-white max-w-2xl">
-            <div className="inline-flex items-center gap-3 mb-4">
+            <div className="inline-flex items-center gap-3 mb-[clamp(0.75rem,2vh,1rem)]">
               <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded text-[10px] sm:text-xs font-semibold tracking-widest border border-white/20">
                 DESDE 1990, SIMPLESMENTE VOCÊ!
               </span>
@@ -104,23 +104,23 @@ export const Hero: React.FC = () => {
 
             <h1
               ref={headlineRef}
-              className="text-[2.7rem] sm:text-5xl lg:text-6xl xl:text-[4.5rem] font-bold mb-5 leading-[1.02] max-w-[11ch]"
+              className="text-[clamp(2.6rem,5.8vw,4.5rem)] font-bold mb-[clamp(0.75rem,2.4vh,1.25rem)] leading-[1.02] max-w-[11ch]"
               style={{ fontFamily: 'Playfair Display, serif' }}
             >
               Seu visual em boas mãos desde 1990.
             </h1>
 
-            <p ref={subheadlineRef} className="text-sm sm:text-base md:text-lg mb-7 text-white/90 leading-relaxed max-w-xl" style={{ fontFamily: 'Inter, sans-serif' }}>
+            <p ref={subheadlineRef} className="text-[clamp(0.92rem,1.5vw,1.125rem)] mb-[clamp(1rem,3vh,1.75rem)] text-white/90 leading-relaxed max-w-xl" style={{ fontFamily: 'Inter, sans-serif' }}>
               Salão unissex para toda a família. Cortes, cuidados com pele e cabelos, e a autoestima que você procura em um ambiente acolhedor com um atendimento pessoal.
             </p>
 
-            <div ref={buttonsRef} className="flex flex-col xs:flex-row sm:flex-row flex-wrap gap-3 mb-9">
+            <div ref={buttonsRef} className="flex flex-col xs:flex-row sm:flex-row flex-wrap gap-3 mb-[clamp(1.25rem,4vh,2.25rem)]">
               <button
                 onClick={() => {
                   const element = document.getElementById('appointment');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#A5000A] text-white rounded-lg font-semibold hover:bg-[#7B0007] transition-all shadow-lg text-sm"
+                className="inline-flex items-center justify-center gap-2 px-5 py-[clamp(0.65rem,1.8vh,0.75rem)] bg-[#A5000A] text-white rounded-lg font-semibold hover:bg-[#7B0007] transition-all shadow-lg text-sm"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               >
                 <Calendar className="w-4 h-4" />
@@ -128,7 +128,7 @@ export const Hero: React.FC = () => {
               </button>
               <button
                 onClick={() => window.open('https://wa.me/5586999999999', '_blank')}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-black/18 text-white rounded-lg font-semibold border border-white/75 hover:bg-white hover:text-[#8B0008] transition-all text-sm"
+                className="inline-flex items-center justify-center gap-2 px-5 py-[clamp(0.65rem,1.8vh,0.75rem)] bg-black/18 text-white rounded-lg font-semibold border border-white/75 hover:bg-white hover:text-[#8B0008] transition-all text-sm"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               >
                 <MessageCircle className="w-4 h-4" />
@@ -136,7 +136,7 @@ export const Hero: React.FC = () => {
               </button>
             </div>
 
-            <div ref={badgesRef} className="grid grid-cols-1 min-[420px]:grid-cols-3 gap-4 sm:flex sm:flex-wrap sm:gap-6">
+            <div ref={badgesRef} className="grid grid-cols-1 min-[420px]:grid-cols-3 gap-[clamp(0.75rem,2.5vh,1.5rem)] sm:flex sm:flex-wrap">
               <div className="flex items-center gap-2">
                 <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
                   <Clock className="w-5 h-5 text-white" />

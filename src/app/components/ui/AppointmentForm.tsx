@@ -51,24 +51,24 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ className = ''
     });
   };
 
-  const fieldClass = 'w-full h-10 2xl:h-11 min-w-0 px-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8B0008] focus:border-transparent bg-white';
-  const iconFieldClass = 'w-full h-10 2xl:h-11 min-w-0 pl-9 pr-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8B0008] focus:border-transparent bg-white';
+  const fieldClass = 'w-full h-[clamp(2.25rem,6vh,2.75rem)] min-w-0 px-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8B0008] focus:border-transparent bg-white';
+  const iconFieldClass = 'w-full h-[clamp(2.25rem,6vh,2.75rem)] min-w-0 pl-9 pr-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8B0008] focus:border-transparent bg-white';
 
   return (
     <form
       id={id}
       onSubmit={handleSubmit}
-      className={`bg-white rounded-2xl shadow-xl p-5 sm:p-6 md:p-7 lg:p-5 2xl:p-7 w-full max-w-[430px] lg:max-w-[400px] 2xl:max-w-[430px] mx-auto lg:mx-0 ${className}`}
+      className={`bg-white rounded-2xl shadow-xl p-[clamp(1rem,3vh,1.75rem)] w-full max-w-[min(430px,92vw)] lg:max-w-[clamp(360px,31vw,430px)] mx-auto lg:mx-0 ${className}`}
       style={{ fontFamily: 'Inter, sans-serif' }}
     >
-      <div className="mb-4 2xl:mb-5">
-        <h3 className="text-lg sm:text-xl font-bold text-[#211A1A] mb-1">Agende seu horário</h3>
+      <div className="mb-[clamp(0.75rem,2.5vh,1.25rem)]">
+        <h3 className="text-[clamp(1.05rem,2.5vh,1.25rem)] font-bold text-[#211A1A] mb-1">Agende seu horário</h3>
         <p className="text-xs sm:text-sm text-[#6B5F5F]">Atendimento presencial</p>
       </div>
 
-      <div className="space-y-3 lg:space-y-2.5 2xl:space-y-3.5">
+      <div className="space-y-[clamp(0.55rem,1.8vh,0.875rem)]">
         <div>
-          <label className="block text-xs font-medium text-[#6B5F5F] mb-1 2xl:mb-1.5">
+          <label className="block text-xs font-medium text-[#6B5F5F] mb-[clamp(0.25rem,0.9vh,0.375rem)]">
             Serviço
           </label>
           <select
@@ -88,7 +88,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ className = ''
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div className="min-w-0">
-            <label className="block text-xs font-medium text-[#6B5F5F] mb-1 2xl:mb-1.5">
+            <label className="block text-xs font-medium text-[#6B5F5F] mb-[clamp(0.25rem,0.9vh,0.375rem)]">
               Data
             </label>
             <div className="relative min-w-0">
@@ -104,7 +104,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ className = ''
           </div>
 
           <div className="min-w-0">
-            <label className="block text-xs font-medium text-[#6B5F5F] mb-1 2xl:mb-1.5">
+            <label className="block text-xs font-medium text-[#6B5F5F] mb-[clamp(0.25rem,0.9vh,0.375rem)]">
               Horário
             </label>
             <div className="relative min-w-0">
@@ -127,7 +127,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ className = ''
         </div>
 
         <div>
-          <label className="block text-xs font-medium text-[#6B5F5F] mb-1 2xl:mb-1.5">
+          <label className="block text-xs font-medium text-[#6B5F5F] mb-[clamp(0.25rem,0.9vh,0.375rem)]">
             Nome
           </label>
           <div className="relative">
@@ -144,7 +144,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ className = ''
         </div>
 
         <div>
-          <label className="block text-xs font-medium text-[#6B5F5F] mb-1 2xl:mb-1.5">
+          <label className="block text-xs font-medium text-[#6B5F5F] mb-[clamp(0.25rem,0.9vh,0.375rem)]">
             Telefone
           </label>
           <div className="relative">
@@ -162,7 +162,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ className = ''
 
         <button
           type="submit"
-          className="w-full px-5 py-2.5 2xl:py-3 bg-[#8B0008] text-white rounded-lg text-sm sm:text-base font-semibold hover:bg-[#6B0006] transition-all mt-2"
+          className="w-full px-5 py-[clamp(0.65rem,1.8vh,0.75rem)] bg-[#8B0008] text-white rounded-lg text-sm sm:text-base font-semibold hover:bg-[#6B0006] transition-all mt-[clamp(0.25rem,1vh,0.5rem)]"
         >
           Confirmar agendamento
         </button>

@@ -11,8 +11,8 @@ export const Footer: React.FC = () => {
 
   return (
     <footer id="footer" className="bg-[#211A1A] text-white" style={{ fontFamily: 'Inter, sans-serif' }}>
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div className="max-w-[1400px] mx-auto px-[clamp(1rem,4vw,3rem)] py-[clamp(2rem,6vh,3rem)]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[clamp(1.5rem,4vw,2rem)] mb-[clamp(1.5rem,4vh,2rem)]">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">

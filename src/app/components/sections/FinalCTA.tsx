@@ -29,13 +29,13 @@ export const FinalCTA: React.FC = () => {
     <section ref={sectionRef} className="bg-[#F8F5F2]">
       <div
         ref={ctaRef}
-        className="bg-[#8B0008] py-8"
+        className="bg-[#8B0008] py-[clamp(1.5rem,5vh,2rem)]"
       >
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-[1400px] mx-auto px-[clamp(1rem,4vw,3rem)]">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-[clamp(1rem,4vw,1.5rem)]">
             {/* Left Content */}
             <div className="text-white text-center md:text-left">
-              <h3 className="text-2xl md:text-3xl font-bold mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>
+              <h3 className="text-[clamp(1.5rem,3vw,1.875rem)] font-bold mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>
                 Pronto para renovar seu visual?
               </h3>
               <p className="text-base text-white/90" style={{ fontFamily: 'Inter, sans-serif' }}>

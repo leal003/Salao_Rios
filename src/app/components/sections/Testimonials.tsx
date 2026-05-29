@@ -59,15 +59,15 @@ export const Testimonials: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 bg-[#F8F5F2]">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+    <section ref={sectionRef} className="py-[clamp(2.5rem,8vh,4rem)] bg-[#F8F5F2]">
+      <div className="max-w-[1400px] mx-auto px-[clamp(1rem,4vw,3rem)]">
         <div ref={titleRef} className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#211A1A] mb-3" style={{ fontFamily: 'Playfair Display, serif' }}>
+          <h2 className="text-[clamp(2rem,4vw,2.5rem)] font-bold text-[#211A1A] mb-3" style={{ fontFamily: 'Playfair Display, serif' }}>
             O que nossos clientes dizem
           </h2>
         </div>
 
-        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-[clamp(1rem,3vw,1.5rem)] max-w-5xl mx-auto">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
