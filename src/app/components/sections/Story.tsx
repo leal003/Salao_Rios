@@ -17,16 +17,13 @@ export const Story: React.FC = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
-
       gsap.from(contentRef.current, {
         scrollTrigger: {
           trigger: contentRef.current,
           start: 'top 80%',
         },
         opacity: 0,
-        x: isDesktop ? -50 : 0,
-        y: isDesktop ? 0 : 20,
+        x: -50,
         duration: 1,
       });
 
@@ -36,8 +33,7 @@ export const Story: React.FC = () => {
           start: 'top 80%',
         },
         opacity: 0,
-        x: isDesktop ? 50 : 0,
-        y: isDesktop ? 0 : 20,
+        x: 50,
         duration: 1,
       });
 

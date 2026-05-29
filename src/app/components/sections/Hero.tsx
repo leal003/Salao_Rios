@@ -20,7 +20,6 @@ export const Hero: React.FC = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-      const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
 
       tl.from(headlineRef.current, {
         opacity: 0,
@@ -46,8 +45,7 @@ export const Hero: React.FC = () => {
         }, '-=0.3')
         .from(formRef.current, {
           opacity: 0,
-          x: isDesktop ? 42 : 0,
-          y: isDesktop ? 0 : 20,
+          x: 42,
           duration: 1,
         }, '-=1')
         .from(imageRef.current, {
