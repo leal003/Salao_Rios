@@ -90,7 +90,7 @@ export const Header: React.FC = () => {
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        <div className="flex items-center justify-between min-h-16 h-[clamp(64px,9vh,72px)] gap-4">
+        <div className="relative flex items-center justify-between min-h-16 h-[clamp(64px,9vh,72px)] gap-4">
           <div className="flex items-center gap-4 shrink-0">
             <div className="w-[clamp(40px,6vh,48px)] h-[clamp(40px,6vh,48px)] rounded-full bg-white flex items-center justify-center border-2 border-white shadow-md">
               <div className="text-[#8B0008] text-xs font-bold text-center leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
@@ -148,7 +148,7 @@ export const Header: React.FC = () => {
           </div>
 
           <button
-            className="lg:hidden inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/70"
+            className="absolute right-0 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 shrink-0 items-center justify-center rounded-lg text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/70 lg:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Menu"
           >
