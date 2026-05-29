@@ -67,13 +67,13 @@ export const Services: React.FC = () => {
           </p>
         </div>
 
-        <div ref={cardsRef} className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+        <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <div
                 key={index}
-                className="relative flex-shrink-0 w-[280px] h-[200px] rounded-2xl overflow-hidden group cursor-pointer snap-start"
+                className="relative h-[210px] rounded-2xl overflow-hidden group cursor-pointer"
               >
                 <ImageWithFallback
                   src={service.image}

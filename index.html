@@ -15,22 +15,7 @@
     <body>
       
       <div id="root"></div>
-      <script type="module">
-        const isGitHubPages = window.location.hostname.endsWith('github.io');
-
-        if (isGitHubPages) {
-          const stylesheet = document.createElement('link');
-          stylesheet.rel = 'stylesheet';
-          stylesheet.href = '/Salao_Rios/docs/assets/index-Di69rT2x.css';
-          document.head.appendChild(stylesheet);
-
-          const appScript = '/Salao_Rios/docs/assets/index-J1YI6NsA.js';
-          import(/* @vite-ignore */ appScript);
-        } else {
-          const devScript = '/src/main.tsx';
-          import(/* @vite-ignore */ devScript);
-        }
-      </script>
+      <script type="module" src="/src/main.tsx"></script>
       
     </body>
   </html>
