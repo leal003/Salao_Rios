@@ -67,7 +67,7 @@ export const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="hero" ref={heroRef} className="relative min-h-screen pt-[clamp(64px,9vh,72px)] overflow-hidden bg-[#220003]">
+    <section id="hero" ref={heroRef} className="relative min-h-[calc(100vh-clamp(64px,9vh,72px))] overflow-hidden bg-[#220003]">
       <div className="absolute inset-0">
         <div ref={imageRef} className="absolute inset-y-0 right-0 grid w-full grid-cols-1 overflow-hidden md:w-[68%] md:grid-cols-2 xl:w-[66%]">
           <div className="relative h-full min-w-0">
