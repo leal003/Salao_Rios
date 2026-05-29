@@ -68,6 +68,10 @@ export const Header: React.FC = () => {
       return document.querySelector(`#${id} h2`) as HTMLElement | null;
     }
 
+    if (window.matchMedia('(max-width: 1023px)').matches && id === 'story') {
+      return document.querySelector('#story img') as HTMLElement | null;
+    }
+
     return document.getElementById(id);
   };
 
@@ -81,7 +85,8 @@ export const Header: React.FC = () => {
         element.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } else {
         const headerHeight = headerBarRef.current?.getBoundingClientRect().height || 0;
-        const top = element.getBoundingClientRect().top + window.scrollY - headerHeight - 56;
+        const mobileStoryOffset = window.matchMedia('(max-width: 1023px)').matches && id === 'story';
+        const top = element.getBoundingClientRect().top + window.scrollY - headerHeight - (mobileStoryOffset ? 14 : 56);
         window.scrollTo({ top, behavior: 'smooth' });
       }
     };
