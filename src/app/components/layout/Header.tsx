@@ -6,6 +6,7 @@ export const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
+  const headerBarRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<Record<string, HTMLButtonElement | null>>({});
 
@@ -20,36 +21,26 @@ export const Header: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      const headerHeight = headerBarRef.current?.getBoundingClientRect().height || 0;
+      const activationLine = window.scrollY + headerHeight + window.innerHeight * 0.22;
+      const current = menuItems.reduce((active, item) => {
+        const section = document.getElementById(item.id);
+        if (!section) return active;
+
+        return section.offsetTop <= activationLine ? item.id : active;
+      }, 'hero');
+
+      setActiveSection(current);
     };
 
     handleScroll();
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const sections = menuItems
-      .map((item) => document.getElementById(item.id))
-      .filter(Boolean) as HTMLElement[];
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-        if (visible?.target.id) {
-          setActiveSection(visible.target.id);
-        }
-      },
-      {
-        rootMargin: '-30% 0px -55% 0px',
-        threshold: [0.1, 0.35, 0.6],
-      },
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
   }, []);
 
   useLayoutEffect(() => {
@@ -72,19 +63,32 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('resize', updateIndicator);
   }, [activeSection]);
 
+  const getScrollTarget = (id: string) => {
+    if (window.matchMedia('(max-width: 1023px)').matches && ['services', 'gallery', 'story'].includes(id)) {
+      return document.querySelector(`#${id} h2`) as HTMLElement | null;
+    }
+
+    return document.getElementById(id);
+  };
+
   const scrollToSection = (id: string, options: { block?: ScrollLogicalPosition } = {}) => {
-    const element = document.getElementById(id);
-    if (element) {
+    const scroll = () => {
+      const element = getScrollTarget(id);
+      if (!element) return;
+
       setActiveSection(id);
       if (options.block === 'center') {
         element.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } else {
-        const headerHeight = document.querySelector('header')?.getBoundingClientRect().height || 0;
-        const top = element.getBoundingClientRect().top + window.scrollY - headerHeight - 12;
+        const headerHeight = headerBarRef.current?.getBoundingClientRect().height || 0;
+        const top = element.getBoundingClientRect().top + window.scrollY - headerHeight - 56;
         window.scrollTo({ top, behavior: 'smooth' });
       }
-      setIsMobileMenuOpen(false);
-    }
+    };
+
+    setActiveSection(id);
+    setIsMobileMenuOpen(false);
+    window.setTimeout(scroll, isMobileMenuOpen ? 120 : 0);
   };
 
   return (
@@ -96,7 +100,7 @@ export const Header: React.FC = () => {
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        <div className="relative flex items-center justify-between min-h-16 h-[clamp(64px,9vh,72px)] gap-4">
+        <div ref={headerBarRef} className="relative flex items-center justify-between min-h-16 h-[clamp(64px,9vh,72px)] gap-4">
           <div className="flex items-center gap-4 shrink-0">
             <div className="w-[clamp(40px,6vh,48px)] h-[clamp(40px,6vh,48px)] rounded-full bg-white flex items-center justify-center border-2 border-white shadow-md">
               <div className="text-[#8B0008] text-xs font-bold text-center leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
