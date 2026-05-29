@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
     { label: 'Serviços', id: 'services' },
     { label: 'Galeria', id: 'gallery' },
     { label: 'Sobre', id: 'story' },
-    { label: 'Contato', id: 'footer' },
+    { label: 'Contato', id: 'contact' },
   ];
 
   useEffect(() => {
@@ -23,6 +23,14 @@ export const Header: React.FC = () => {
       setIsScrolled(window.scrollY > 50);
 
       const headerHeight = headerBarRef.current?.getBoundingClientRect().height || 0;
+      const documentHeight = document.documentElement.scrollHeight;
+      const reachedPageEnd = window.scrollY + window.innerHeight >= documentHeight - 24;
+
+      if (reachedPageEnd) {
+        setActiveSection('contact');
+        return;
+      }
+
       const activationLine = window.scrollY + headerHeight + window.innerHeight * 0.22;
       const current = menuItems.reduce((active, item) => {
         const section = document.getElementById(item.id);

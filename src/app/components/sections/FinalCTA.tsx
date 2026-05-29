@@ -26,7 +26,7 @@ export const FinalCTA: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#F8F5F2]">
+    <section id="contact" ref={sectionRef} className="bg-[#F8F5F2]">
       <div
         ref={ctaRef}
         className="bg-[#8B0008] py-[clamp(1.5rem,5vh,2rem)]"

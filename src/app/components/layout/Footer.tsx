@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
                 { label: 'Início', id: 'hero' },
                 { label: 'Serviços', id: 'services' },
                 { label: 'Sobre', id: 'story' },
-                { label: 'Contato', id: 'footer' },
+                { label: 'Contato', id: 'contact' },
               ].map((item) => (
                 <li key={item.id}>
                   <button
