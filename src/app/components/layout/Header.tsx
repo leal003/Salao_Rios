@@ -64,7 +64,7 @@ export const Header: React.FC = () => {
   }, [activeSection]);
 
   const getScrollTarget = (id: string) => {
-    if (window.matchMedia('(max-width: 1023px)').matches && ['services', 'gallery', 'story'].includes(id)) {
+    if (window.matchMedia('(max-width: 1023px)').matches && ['services', 'gallery'].includes(id)) {
       return document.querySelector(`#${id} h2`) as HTMLElement | null;
     }
 
