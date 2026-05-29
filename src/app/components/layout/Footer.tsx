@@ -74,7 +74,7 @@ export const Footer: React.FC = () => {
             <h4 className="font-semibold mb-3 text-sm">Contato</h4>
             <div className="space-y-3">
               <a
-                href="https://wa.me/5586988065927"
+                href="https://wa.me/5586999999999"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-2 text-sm text-white/70 hover:text-white transition-colors"
@@ -82,7 +82,7 @@ export const Footer: React.FC = () => {
                 <Phone className="w-4 h-4 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-medium text-white">WhatsApp</p>
-                  <p>(86) 98806-5927</p>
+                  <p>(86) 99999-9999</p>
                 </div>
               </a>
               <div className="flex items-start gap-2 text-sm text-white/70">

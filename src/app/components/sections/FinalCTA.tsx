@@ -57,7 +57,7 @@ export const FinalCTA: React.FC = () => {
                 Agendar atendimento presencial
               </button>
               <button
-                onClick={() => window.open('https://wa.me/5586988065927', '_blank')}
+                onClick={() => window.open('https://wa.me/5586999999999', '_blank')}
                 className="flex items-center gap-2 px-6 py-3 bg-transparent text-white rounded-lg font-semibold border-2 border-white hover:bg-white hover:text-[#8B0008] transition-all"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               >
@@ -70,7 +70,7 @@ export const FinalCTA: React.FC = () => {
           <div className="flex items-center justify-center gap-2 text-white/80 mt-6">
             <MapPin className="w-4 h-4" />
             <p className="text-sm" style={{ fontFamily: 'Inter, sans-serif' }}>
-              Atendimento presencial com hora marcada | (86) 98806-5927
+              Atendimento presencial com hora marcada | (86) 99999-9999
             </p>
           </div>
         </div>

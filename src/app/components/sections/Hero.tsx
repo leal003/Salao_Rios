@@ -127,7 +127,7 @@ export const Hero: React.FC = () => {
                 Agendar atendimento
               </button>
               <button
-                onClick={() => window.open('https://wa.me/5586988065927', '_blank')}
+                onClick={() => window.open('https://wa.me/5586999999999', '_blank')}
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-black/18 text-white rounded-lg font-semibold border border-white/75 hover:bg-white hover:text-[#8B0008] transition-all text-sm"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               >
