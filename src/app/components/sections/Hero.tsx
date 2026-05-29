@@ -118,7 +118,7 @@ export const Hero: React.FC = () => {
               <button
                 onClick={() => {
                   const element = document.getElementById('appointment');
-                  if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  if (element) element.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }}
                 className="inline-flex items-center justify-center gap-2 px-5 py-[clamp(0.65rem,1.8vh,0.75rem)] bg-[#A5000A] text-white rounded-lg font-semibold hover:bg-[#7B0007] transition-all shadow-lg text-sm"
                 style={{ fontFamily: 'Inter, sans-serif' }}
@@ -167,7 +167,7 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          <div ref={formRef} className="relative w-full lg:flex lg:justify-start lg:-translate-x-10 xl:-translate-x-20">
+          <div ref={formRef} className="relative w-full scroll-mt-24 lg:flex lg:justify-start lg:-translate-x-10 xl:-translate-x-20">
             <div className="relative z-10 w-full">
               <AppointmentForm id="appointment" />
             </div>

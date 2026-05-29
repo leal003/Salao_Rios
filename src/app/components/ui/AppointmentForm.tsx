@@ -58,7 +58,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ className = ''
     <form
       id={id}
       onSubmit={handleSubmit}
-      className={`bg-white rounded-2xl shadow-xl p-[clamp(1rem,3vh,1.75rem)] w-full max-w-[min(430px,92vw)] lg:max-w-[clamp(360px,31vw,430px)] mx-auto lg:mx-0 ${className}`}
+      className={`scroll-mt-24 bg-white rounded-2xl shadow-xl p-[clamp(1rem,3vh,1.75rem)] w-full max-w-[min(430px,92vw)] lg:max-w-[clamp(360px,31vw,430px)] mx-auto lg:mx-0 ${className}`}
       style={{ fontFamily: 'Inter, sans-serif' }}
     >
       <div className="mb-[clamp(0.75rem,2.5vh,1.25rem)]">

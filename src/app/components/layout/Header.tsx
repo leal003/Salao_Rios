@@ -72,11 +72,11 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('resize', updateIndicator);
   }, [activeSection]);
 
-  const scrollToSection = (id: string) => {
+  const scrollToSection = (id: string, options: { block?: ScrollLogicalPosition } = {}) => {
     const element = document.getElementById(id);
     if (element) {
       setActiveSection(id);
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth', block: options.block || 'start' });
       setIsMobileMenuOpen(false);
     }
   };
@@ -185,7 +185,7 @@ export const Header: React.FC = () => {
               <span>(86) 99999-9999</span>
             </a>
             <button
-              onClick={() => scrollToSection('appointment')}
+              onClick={() => scrollToSection('appointment', { block: 'center' })}
               className="w-full px-6 py-3 bg-white text-[#8B0008] rounded-lg font-semibold hover:bg-white/90 transition-all mt-2"
               style={{ fontFamily: 'Inter, sans-serif' }}
             >
