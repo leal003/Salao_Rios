@@ -5,8 +5,7 @@ import { Calendar, Clock, MessageCircle, Shield, Star } from 'lucide-react';
 import gsap from 'gsap';
 
 import heroImage from '../../../imports/image.png';
-import heroDetailOne from '../../../imports/image-2.png';
-import heroDetailTwo from '../../../imports/image-5.png';
+import heroSecondImage from '../../../imports/image-2.png';
 
 export const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -17,7 +16,6 @@ export const Hero: React.FC = () => {
   const formRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const accentRef = useRef<HTMLSpanElement>(null);
-  const collageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -50,13 +48,6 @@ export const Hero: React.FC = () => {
           x: 42,
           duration: 1,
         }, '-=1')
-        .from(collageRef.current?.children || [], {
-          opacity: 0,
-          y: 24,
-          rotate: -2,
-          stagger: 0.16,
-          duration: 0.9,
-        }, '-=0.8')
         .from(imageRef.current, {
           scale: 1.04,
           duration: 1.6,
@@ -78,14 +69,25 @@ export const Hero: React.FC = () => {
   return (
     <section id="hero" ref={heroRef} className="relative min-h-screen pt-[72px] overflow-hidden bg-[#220003]">
       <div className="absolute inset-0">
-        <div ref={imageRef} className="absolute inset-0 flex justify-end overflow-hidden">
-          <ImageWithFallback
-            src={heroImage}
-            alt="Salão Rios Unissex - interior do salão"
-            className="h-full w-full object-cover object-[58%_center] opacity-95 md:object-contain md:object-right lg:w-[72%] xl:w-[66%]"
-          />
+        <div ref={imageRef} className="absolute inset-y-0 right-0 grid w-full grid-cols-1 overflow-hidden md:w-[68%] md:grid-cols-2 xl:w-[66%]">
+          <div className="relative h-full min-w-0">
+            <ImageWithFallback
+              src={heroSecondImage}
+              alt="Cliente no Salão Rios"
+              className="h-full w-full object-cover object-center opacity-80"
+            />
+            <div className="absolute inset-0 bg-[#5A0005]/36" />
+          </div>
+          <div className="relative hidden h-full min-w-0 md:block">
+            <ImageWithFallback
+              src={heroImage}
+              alt="Salão Rios Unissex - interior do salão"
+              className="h-full w-full object-cover object-center opacity-80"
+            />
+            <div className="absolute inset-0 bg-[#5A0005]/36" />
+          </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#5A0005] via-[#7B0007]/88 via-[48%] to-[#5A0005]/18" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#5A0005] via-[#7B0007]/88 via-[46%] to-[#5A0005]/32" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#5A0005]/75 via-transparent to-transparent" />
         <div className="absolute left-0 top-0 hidden h-full w-[34%] bg-[#5A0005]/58 md:block" />
       </div>
@@ -166,28 +168,6 @@ export const Hero: React.FC = () => {
           </div>
 
           <div ref={formRef} className="relative w-full lg:flex lg:justify-start lg:-translate-x-10 xl:-translate-x-20">
-            <div
-              ref={collageRef}
-              className="pointer-events-none absolute left-[-210px] top-[45px] z-0 hidden w-[190px] xl:left-[-245px] xl:top-[35px] xl:w-[220px] lg:block"
-            >
-              <div className="relative ml-auto h-[150px] w-[140px] overflow-hidden rounded-xl border border-white/18 shadow-2xl xl:h-[170px] xl:w-[160px]">
-                <ImageWithFallback
-                  src={heroDetailOne}
-                  alt="Cliente no Salão Rios"
-                  className="h-full w-full object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-[#5A0005]/20" />
-              </div>
-              <div className="relative mt-4 h-[115px] w-[180px] overflow-hidden rounded-xl border border-white/18 shadow-2xl xl:h-[130px] xl:w-[210px]">
-                <ImageWithFallback
-                  src={heroDetailTwo}
-                  alt="Atendimento no Salão Rios"
-                  className="h-full w-full object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-[#5A0005]/24" />
-              </div>
-            </div>
-
             <div className="relative z-10 w-full">
               <AppointmentForm id="appointment" />
             </div>
